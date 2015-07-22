@@ -251,7 +251,7 @@ if version >= 703
 endif
 
 " AirLine
-let g:airline_powerline_fonts  = 1
+let g:airline_powerline_fonts  = 0
 let g:airline_theme            = 'solarized'
 let g:airline_enable_ctrlp     = 1
 let g:airline_enable_gundo     = 1
@@ -270,8 +270,7 @@ set gdefault "this will make \g the default in searches.
 
 " always add \v . This makes searches require less escaping and act like egrep
 " this is literally called `very magic` mode...
-nnoremap / /\v
-vnoremap / /\v
+
 
 " make magic mode the default in find and replace as well.
 cnoremap %s/ %smagic/
