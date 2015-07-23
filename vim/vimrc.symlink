@@ -268,12 +268,6 @@ let g:airline#extensions#tabline#enabled = 1
 
 set gdefault "this will make \g the default in searches.
 
-" always add \v . This makes searches require less escaping and act like egrep
-" this is literally called `very magic` mode...
-
-
-" make magic mode the default in find and replace as well.
-cnoremap %s/ %smagic/
 cnoremap \>s/ \>smagic/
 
 " this does not work well with :g... so shut that down.
