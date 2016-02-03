@@ -4,7 +4,7 @@ function fastly_routes {
 }
 
 function morning {
-  vagrant reload c1867d8
+  vagrant resume c1867d8
   echo 'sleeping 15'
 	sleep 5
 	echo 'sleeping 10'
