@@ -16,14 +16,12 @@ Plugin 'gmarik/Vundle.vim' " let Vundle manage Vundle, required
 
 Plugin 'AndrewRadev/splitjoin.vim'        " split one-liners into equivalant multiliner
 Plugin 'airblade/vim-gitgutter'           " git status markers in left gutter
-Plugin 'altercation/vim-colors-solarized' " solarized color support
 Plugin 'bling/vim-airline'                " fancy status bar
 Plugin 'godlygeek/tabular'                " Alignment of code on things
 Plugin 'jiangmiao/auto-pairs'             " Insert or delete brackets, parens, quotes in pair
 Plugin 'jlanzarotta/bufexplorer'          " list view and manage buffers (<leader>be)
 Plugin 'kien/ctrlp.vim'                   " fuzzy search and text expansion for vim
 Plugin 'mileszs/ack.vim'                  " Ack search for vim
-Plugin 'myusuf3/numbers.vim'              " line numbers relative/absolute helper
 Plugin 'scrooloose/nerdcommenter'         " better auto-commenting (<leader>c<space)
 Plugin 'scrooloose/nerdtree'              " vim filebrowser
 Plugin 'scrooloose/syntastic'             " Syntax checking and highlighting
@@ -70,9 +68,6 @@ set hlsearch          " highlight search terms
 set smartcase         " search string with mixed case will be case sensitive
 set ignorecase        " ignore case when searching
 set history=1000
-
-" Text Wrapping
-set colorcolumn=80    " show vertical line at line 80
 
 " Show invisable characters
 set list
@@ -180,14 +175,6 @@ set splitbelow
 set splitright
 
 
-"----------------------------------------------------------------------------
-" Color Scheme (Solarized)
-"----------------------------------------------------------------------------
-set background=dark
-let g:solarized_contrast="normal"
-let g:solarized_visibility="low"
-colorscheme solarized
-
 
 "----------------------------------------------------------------------------
 " Plugin stuff
@@ -196,8 +183,7 @@ colorscheme solarized
 " Ack
 map <leader>a :Ack<space>
 map <leader>a* :Ack<space><cword><CR>
-set grepprg=ack
-set grepformat=%f:%l:%m
+let g:ackprg = "/usr/bin/ack-grep -s -H --nocolor --nogroup --column"
 
 " Numbers
 let g:numbers_exclude = ['gundo', 'nerdtree']
@@ -252,7 +238,6 @@ endif
 
 " AirLine
 let g:airline_powerline_fonts  = 0
-let g:airline_theme            = 'solarized'
 let g:airline_enable_ctrlp     = 1
 let g:airline_enable_gundo     = 1
 let g:airline_enable_nerdtree  = 1
